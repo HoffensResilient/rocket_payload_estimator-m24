@@ -159,7 +159,7 @@ if required_features == "all":
             input_data[feature] = st.number_input(
                 label=f"{stage}: {label}",
                 value=0.0,
-                step=0.1,
+                step=1,
                 help=f"Enter value for {stage} {label}",
                 key=feature  # Add this line - use the full feature name as unique key
             )
@@ -184,7 +184,7 @@ else:
                 input_data[feature] = st.number_input(
                     label=param.replace('_', ' ').title(),
                     value=0.0,
-                    step=0.1,
+                    step=1,
                     help=f"Enter value for {param.replace('_', ' ')}",
                     key=feature  # Add this line - use the full feature name as unique key
                 )

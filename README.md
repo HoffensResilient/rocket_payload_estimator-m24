@@ -1,4 +1,4 @@
-# Rocket Paylod Predictor
+# Rocket Payload Predictor
 Synopsis:
 A small pipeline that generates physically-plausible synthetic rocket datasets, trains multi-output regressors to predict payload to different orbits (LEO, ISS, SSO, MEO, GEO), and validates those trained models against real rocket data while producing figures and CSV summaries.
 

@@ -8,6 +8,16 @@ import json
 import os
 from sklearn.metrics import r2_score, mean_squared_error
 
+def align_features(input_df, model):
+    """
+    Aligns input_df columns to match the training features of the model.
+    Adds missing features (set to 0.0) and removes unexpected extras.
+    """
+    if hasattr(model.estimators_[0], "feature_names_in_"):
+        expected = model.estimators_[0].feature_names_in_
+        input_df = input_df.reindex(columns=expected, fill_value=0.0)
+    return input_df
+
 # Set page config
 st.set_page_config(
     page_title="Rocket Payload Predictor",
@@ -224,6 +234,7 @@ if st.button("Predict Payload", type="primary"):
     # Make prediction
     try:
         model = models[model_type][has_transfer]
+        input_df = align_features(input_df, model)
         prediction = model.predict(input_df)
         
         # Display results

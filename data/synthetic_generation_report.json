@@ -1,13 +1,10 @@
 {
-  "n_requested": 18000,
-  "n_generated": 14448,
-  "n_failed_attempts": 3552,
+  "n_requested": 6000,
+  "n_generated": 4817,
+  "n_failed_attempts": 1183,
+  "n_total_rows": 38536,
   "baseline_total_dv_used_m_s": 9240.55,
-  "orbit_median_multiplier_used": {
-    "LEO": 1.0,
-    "ISS": 0.893850558880736,
-    "SSO": 0.7155992482891094,
-    "MEO": 0.08639705882352941,
-    "GEO": 0.11651573149099057
-  }
+  "rockets_per_altitude": 8,
+  "altitude_range": "100-800km in 100km increments",
+  "isp_model": "mass_and_technology_based"
 }
